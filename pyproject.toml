@@ -9,3 +9,17 @@ requires-python = "==3.11.*"
 dependencies = [
   "Qt.py>=1.4.1",
 ]
+
+[tool.setuptools]
+# Entspricht setup.cfg: include_package_data = True
+include-package-data = true
+
+[tool.setuptools.packages.find]
+# Entspricht setup.cfg: packages = find:  +  [options.packages.find] exclude = examples
+exclude = ["examples"]
+
+[tool.setuptools.package-data]
+# Entspricht setup.cfg:
+#   [options.package_data]
+#   NodeGraphQt = widgets/icons/node_base.png
+NodeGraphQt = ["widgets/icons/node_base.png"]
